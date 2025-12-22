@@ -8,8 +8,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   FireDAC.Phys.PGDef, FireDAC.Phys.PG, Data.DB, FireDAC.Comp.Client,
   FireDAC.VCLUI.Login, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.UI;   //, ZAbstractRODataset,
-  //ZAbstractDataset, ZAbstractTable, ZDataset, ZAbstractConnection, ZConnection;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.UI;
 
 type
   TDataModule2 = class(TDataModule)

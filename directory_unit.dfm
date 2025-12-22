@@ -274,6 +274,7 @@ object DirectoryForm: TDirectoryForm
         Top = 350
         Width = 761
         Height = 25
+        DataSource = DataModule2.DataSource_Trailer
         Align = alBottom
         TabOrder = 0
         OnClick = DBNavigator5Click
@@ -325,8 +326,10 @@ object DirectoryForm: TDirectoryForm
         Width = 145
         Height = 23
         DataField = 'type_id'
+        DataSource = DataModule2.DataSource_Trailer
         KeyField = 'id'
         ListField = 'type'
+        ListSource = DataModule2.DataSource_Trailer_Type
         TabOrder = 2
         OnCloseUp = DBLookupComboBox4CloseUp
       end
@@ -336,6 +339,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'capacity'
+        DataSource = DataModule2.DataSource_Trailer
         TabOrder = 3
       end
       object DBEdit2: TDBEdit
@@ -344,6 +348,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'status'
+        DataSource = DataModule2.DataSource_Trailer
         TabOrder = 4
       end
       object DBEdit5: TDBEdit
@@ -352,6 +357,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'name'
+        DataSource = DataModule2.DataSource_Trailer
         TabOrder = 5
       end
     end
@@ -363,6 +369,7 @@ object DirectoryForm: TDirectoryForm
         Top = 350
         Width = 761
         Height = 25
+        DataSource = DataModule2.DataSource_Trailer_Type
         Align = alBottom
         TabOrder = 0
       end
@@ -372,6 +379,7 @@ object DirectoryForm: TDirectoryForm
         Width = 761
         Height = 350
         Align = alClient
+        DataSource = DataModule2.DataSource_Trailer_Type
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -432,6 +440,7 @@ object DirectoryForm: TDirectoryForm
         Top = 350
         Width = 761
         Height = 25
+        DataSource = DataModule2.DataSource_Truck
         Align = alBottom
         TabOrder = 0
         OnClick = DBNavigator7Click
@@ -500,8 +509,10 @@ object DirectoryForm: TDirectoryForm
         Width = 145
         Height = 23
         DataField = 'model_id'
+        DataSource = DataModule2.DataSource_Truck
         KeyField = 'id'
         ListField = 'model'
+        ListSource = DataModule2.DataSource_TruckModel
         TabOrder = 2
         OnCloseUp = DBLookupComboBox5CloseUp
       end
@@ -511,6 +522,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'load_capacity'
+        DataSource = DataModule2.DataSource_Truck
         TabOrder = 3
       end
       object DBLookupComboBox6: TDBLookupComboBox
@@ -519,8 +531,10 @@ object DirectoryForm: TDirectoryForm
         Width = 145
         Height = 23
         DataField = 'trailer_id'
+        DataSource = DataModule2.DataSource_Truck
         KeyField = 'id'
         ListField = 'name'
+        ListSource = DataModule2.DataSource_Trailer
         TabOrder = 4
         OnCloseUp = DBLookupComboBox6CloseUp
       end
@@ -530,6 +544,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'status'
+        DataSource = DataModule2.DataSource_Truck
         TabOrder = 5
       end
       object DBEdit6: TDBEdit
@@ -538,6 +553,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'name'
+        DataSource = DataModule2.DataSource_Truck
         TabOrder = 6
       end
     end
@@ -549,6 +565,7 @@ object DirectoryForm: TDirectoryForm
         Top = 350
         Width = 761
         Height = 25
+        DataSource = DataModule2.DataSource_TruckModel
         Align = alBottom
         TabOrder = 0
       end
@@ -558,6 +575,7 @@ object DirectoryForm: TDirectoryForm
         Width = 761
         Height = 350
         Align = alClient
+        DataSource = DataModule2.DataSource_TruckModel
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -610,6 +628,7 @@ object DirectoryForm: TDirectoryForm
         Top = 350
         Width = 761
         Height = 25
+        DataSource = DataModule2.DataSource_Driver
         Align = alBottom
         TabOrder = 0
         OnClick = DBNavigator9Click
@@ -664,6 +683,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'full_name'
+        DataSource = DataModule2.DataSource_Driver
         TabOrder = 2
       end
       object DBEdit8: TDBEdit
@@ -672,6 +692,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'phone_number'
+        DataSource = DataModule2.DataSource_Driver
         TabOrder = 3
       end
       object DBEdit9: TDBEdit
@@ -680,6 +701,7 @@ object DirectoryForm: TDirectoryForm
         Width = 121
         Height = 23
         DataField = 'status'
+        DataSource = DataModule2.DataSource_Driver
         TabOrder = 4
       end
       object DBLookupComboBox7: TDBLookupComboBox
@@ -688,8 +710,10 @@ object DirectoryForm: TDirectoryForm
         Width = 145
         Height = 23
         DataField = 'truck_id'
+        DataSource = DataModule2.DataSource_Driver
         KeyField = 'id'
         ListField = 'name'
+        ListSource = DataModule2.DataSource_Truck
         TabOrder = 5
         OnCloseUp = DBLookupComboBox7CloseUp
       end

@@ -20,13 +20,21 @@ object Form1: TForm1
       Caption = #1055#1088#1086#1075#1088#1072#1084#1084#1072
       object XML1: TMenuItem
         Caption = #1042#1099#1075#1088#1091#1079#1080#1090#1100' '#1074' XML'
+        OnClick = XML1Click
       end
       object JSON1: TMenuItem
         Caption = #1042#1099#1075#1088#1091#1079#1082#1072' '#1074' JSON'
+        OnClick = JSON1Click
+      end
+      object Upload1: TMenuItem
+        Caption = #1042#1099#1075#1088#1091#1079#1080#1090#1100' '#1074' '#1086#1073#1083#1072#1082#1086
+        OnClick = Upload1Click
       end
       object N2: TMenuItem
         Caption = #1042#1099#1093#1086#1076
         OnClick = N2Click
+      end
+      object TMenuItem
       end
     end
     object N3: TMenuItem
@@ -37,6 +45,7 @@ object Form1: TForm1
       end
       object N6: TMenuItem
         Caption = #1057#1092#1086#1088#1084#1080#1088#1086#1074#1072#1090#1100' '#1088#1077#1081#1089
+        OnClick = N6Click
       end
     end
   end
@@ -57,5 +66,10 @@ object Form1: TForm1
     Title = #1059#1082#1072#1078#1080#1090#1077' '#1087#1072#1087#1082#1091' '#1076#1083#1103' '#1089#1089#1086#1093#1088#1072#1085#1077#1085#1080#1103' '#1076#1072#1085#1085#1099#1093
     Left = 40
     Top = 176
+  end
+  object NetHTTPClient1: TNetHTTPClient
+    UserAgent = 'Embarcadero URI Client/1.0'
+    Left = 976
+    Top = 456
   end
 end

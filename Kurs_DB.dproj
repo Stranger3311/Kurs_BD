@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{9B4A40ED-EA5B-4DBD-9F4C-B13A7DEE200B}</ProjectGuid>
+        <ProjectGuid>{01C048FB-8306-44E2-8608-305978790647}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
@@ -134,6 +134,10 @@
         </DCCReference>
         <DCCReference Include="directory_unit.pas">
             <Form>DirectoryForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Dispatch_Unit.pas">
+            <Form>Form_Dispatch</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -1119,7 +1123,6 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
-            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

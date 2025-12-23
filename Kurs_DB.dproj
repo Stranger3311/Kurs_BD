@@ -140,6 +140,11 @@
             <Form>Form_Dispatch</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Unit2.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="YaDisk.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

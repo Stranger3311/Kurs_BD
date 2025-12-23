@@ -13,6 +13,15 @@ object Form1: TForm1
   Menu = MainMenu1
   Position = poScreenCenter
   TextHeight = 15
+  object BitBtn1: TBitBtn
+    Left = 312
+    Top = 96
+    Width = 75
+    Height = 25
+    Caption = 'BitBtn1'
+    TabOrder = 0
+    OnClick = BitBtn1Click
+  end
   object MainMenu1: TMainMenu
     Left = 32
     Top = 48
@@ -26,15 +35,13 @@ object Form1: TForm1
         Caption = #1042#1099#1075#1088#1091#1079#1082#1072' '#1074' JSON'
         OnClick = JSON1Click
       end
-      object Upload1: TMenuItem
+      object N4: TMenuItem
         Caption = #1042#1099#1075#1088#1091#1079#1080#1090#1100' '#1074' '#1086#1073#1083#1072#1082#1086
-        OnClick = Upload1Click
+        OnClick = N4Click
       end
       object N2: TMenuItem
         Caption = #1042#1099#1093#1086#1076
         OnClick = N2Click
-      end
-      object TMenuItem
       end
     end
     object N3: TMenuItem
@@ -67,9 +74,45 @@ object Form1: TForm1
     Left = 40
     Top = 176
   end
-  object NetHTTPClient1: TNetHTTPClient
-    UserAgent = 'Embarcadero URI Client/1.0'
-    Left = 976
-    Top = 456
+  object IdWebDAV1: TIdWebDAV
+    Intercept = IdCompressionIntercept1
+    IOHandler = IdSSLIOHandlerSocketOpenSSL1
+    HandleRedirects = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.CacheControl = 'no-cache'
+    Request.Connection = 'Keep-Alive'
+    Request.ContentEncoding = 'utf-8'
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.AcceptCharSet = 'utf-8'
+    Request.BasicAuthentication = True
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 224
+    Top = 376
+  end
+  object IdCompressionIntercept1: TIdCompressionIntercept
+    CompressionLevel = 0
+    Left = 200
+    Top = 472
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    Intercept = IdCompressionIntercept1
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Method = sslvTLSv1_2
+    SSLOptions.SSLVersions = [sslvTLSv1_2]
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 352
+    Top = 376
   end
 end

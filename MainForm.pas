@@ -9,7 +9,7 @@ uses
   Datasnap.DBClient, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
   IdHTTP, IdWebDAV, Vcl.StdCtrls, IdIntercept, IdCompressionIntercept,
   IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL,
-  Vcl.Buttons;
+  Vcl.Buttons, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -18,24 +18,17 @@ type
     N2: TMenuItem;
     N3: TMenuItem;
     N5: TMenuItem;
-    XML1: TMenuItem;
     DataSetProvider1: TDataSetProvider;
     ClientDataSet1: TClientDataSet;
     N6: TMenuItem;
     FileOpenDialog1: TFileOpenDialog;
-    JSON1: TMenuItem;
-    IdWebDAV1: TIdWebDAV;
     N4: TMenuItem;
-    IdCompressionIntercept1: TIdCompressionIntercept;
-    IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL;
-    BitBtn1: TBitBtn;
     procedure N2Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure XML1Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure JSON1Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
     procedure DataSetToXML(DataSet: TDataSet; const FileName: string);
@@ -60,64 +53,8 @@ begin
 end;
 
 procedure TForm1.N4Click(Sender: TObject);
-var
-  fStream: TStream;
-  Size: Integer;
-  Buffer: TBytes; // Array of bytes;//<<==-- раз
-  mStream: TMemoryStream;
-  strpas: string;
 begin
-  fStream := TStream.Create;
-  FileOpenDialog1.Options := FileOpenDialog1.Options - [fdoPickFolders];
-  if FileOpenDialog1.Execute then
-  begin
-    fStream := TFileStream.Create(FileOpenDialog1.FileName, fmOpenRead);
-    Size := fStream.Size;
-    SetLength(Buffer, Size);
-    fStream.Read(Buffer[0], Size); // <<==--- именно так
-
-    strpas := TNetEncoding.Base64.Encode('Korobanov.vl@yandex.ru:ASD345kl');
-
-    IdWebDAV1.Request.Clear;
-    IdWebDAV1.Request.CharSet := 'utf-8';
-    IdWebDAV1.Request.BasicAuthentication := true;
-    IdWebDAV1.Request.Username := 'Korobanov.vl@yandex.ru';
-    IdWebDAV1.Request.Password := 'ASD345kl';
-    IdWebDAV1.Request.CustomHeaders.Add('Accept: */*');
-    //IdWebDAV1.Request.CustomHeaders.Add
-      //('Authorization: Basic ec1bfb17cdca4c82a2ad869b32021ba5');
-   //   ('Authorization: Basic ' + strpas );
-    IdWebDAV1.Request.CustomHeaders.Add('Expect: 100-continue');
-    IdWebDAV1.Request.CustomHeaders.Add('Content-Type: application/binary');
-    try
-      IdWebDAV1.DAVPut('https://webdav.yandex.ru/123.txt', fStream, '');
-    except
-      on E: Exception do
-        MessageDlg(E.Message + ' (' + 'https://webdav.yandex.ru/123.txt' + ')',
-          mtWarning, [mbOK], 0);
-    end;
-    Application.ProcessMessages;
-
-    fStream.Free;
-
-    { IdWebDAV1.Request.URL := 'https://webdav.yandex.ru/';
-      IdWebDAV1.Request.Username := 'Korobanov.vl@yandex.ru';
-      IdWebDAV1.Request.Password := 'ASD345kl';
-      IdWebDAV1.Request.CharSet := 'utf-8';
-      IdWebDAV1.Request.BasicAuthentication := true;
-      IdWebDAV1.Request.CustomHeaders.Clear;
-
-      try
-      IdWebDAV1.DAVPut('https://webdav.yandex.ru/123.txt', fStream, '');
-      except
-      on E: Exception do
-      MessageDlg(E.Message + ' (' + 'https://webdav.yandex.ru/123.txt' + ')',
-      mtWarning, [mbOK], 0);
-      end; }
-
-  end;
-  FileOpenDialog1.Options := FileOpenDialog1.Options + [fdoPickFolders];
-
+  Form2.ShowModal
 end;
 
 procedure TForm1.N5Click(Sender: TObject);
@@ -128,11 +65,6 @@ end;
 procedure TForm1.N6Click(Sender: TObject);
 begin
   Form_Dispatch.ShowModal
-end;
-
-procedure TForm1.BitBtn1Click(Sender: TObject);
-begin
- Form2.ShowModal
 end;
 
 function TForm1.DataSetToJSON(ADataSet: TDataSet; AName_Tab: string): string;

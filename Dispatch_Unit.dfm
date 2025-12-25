@@ -90,6 +90,7 @@ object Form_Dispatch: TForm_Dispatch
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
     Columns = <
       item
         Expanded = False
@@ -312,11 +313,6 @@ object Form_Dispatch: TForm_Dispatch
     object FDQuery_Dispatchcargo_name: TStringField
       FieldName = 'cargo_name'
       Origin = 'cargo_name'
-      Size = 100
-    end
-    object FDQuery_Dispatchcargo_type_need: TStringField
-      FieldName = 'cargo_type_need'
-      Origin = 'cargo_type_need'
       Size = 100
     end
     object FDQuery_DispatchDiscription: TStringField

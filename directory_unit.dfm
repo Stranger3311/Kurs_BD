@@ -762,6 +762,7 @@ object DirectoryForm: TDirectoryForm
     Top = 306
   end
   object FDQuery_Address: TFDQuery
+    Active = True
     Connection = DataModule2.FDConnection1
     SQL.Strings = (
       'select * '

@@ -6,8 +6,7 @@ uses
   DataModule in 'DataModule.pas' {DataModule2: TDataModule},
   directory_unit in 'directory_unit.pas' {DirectoryForm},
   Dispatch_Unit in 'Dispatch_Unit.pas' {Form_Dispatch},
-  Unit2 in 'Unit2.pas' {Form2},
-  YaDisk in 'YaDisk.pas';
+  Unit2 in 'Unit2.pas' {Form2};
 
 {$R *.res}
 

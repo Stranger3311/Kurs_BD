@@ -39,7 +39,6 @@ type
     FDQuery_Dispatchcargo_weight: TIntegerField;
     FDQuery_Dispatchstatus: TStringField;
     FDQuery_Dispatchcargo_name: TStringField;
-    FDQuery_Dispatchcargo_type_need: TStringField;
     FDQuery_DispatchDiscription: TStringField;
     FDQuery_Dispatchtruck_id: TIntegerField;
     FDQuery_Dispatchid_adr_from: TIntegerField;
@@ -64,6 +63,7 @@ type
     procedure FDQuery_Adrfull_adrGetText(Sender: TField; var Text: string;
       DisplayText: Boolean);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     procedure GetText(Sender: TField; var Text: string; DisplayText: Boolean);
     { Private declarations }
@@ -87,6 +87,14 @@ begin
     Text := Sender.AsString;
     DisplayText := True;
   end;
+end;
+
+procedure TForm_Dispatch.DBGrid1CellClick(Column: TColumn);
+var lv_id: Variant;
+begin
+ lv_id := FDQuery_Dispatch.Fields[0].Value;
+
+ DataModule2.FDTable_Dispatch.Locate('id',lv_id)
 end;
 
 procedure TForm_Dispatch.DBNavigator1Click(Sender: TObject;

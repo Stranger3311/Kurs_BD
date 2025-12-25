@@ -64,6 +64,7 @@ type
       DisplayText: Boolean);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure FormShow(Sender: TObject);
   private
     procedure GetText(Sender: TField; var Text: string; DisplayText: Boolean);
     { Private declarations }
@@ -120,6 +121,12 @@ procedure TForm_Dispatch.FDQuery_Dispatchfull_adr_toGetText(Sender: TField;
   var Text: string; DisplayText: Boolean);
 begin
  GetText(Sender,Text,DisplayText)
+end;
+
+procedure TForm_Dispatch.FormShow(Sender: TObject);
+begin
+ FDQuery_Dispatch.Active := false;
+ FDQuery_Dispatch.Active := true
 end;
 
 end.

@@ -10,6 +10,7 @@ object Form_Dispatch: TForm_Dispatch
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
     Left = 144

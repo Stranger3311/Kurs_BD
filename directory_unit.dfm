@@ -18,7 +18,7 @@ object DirectoryForm: TDirectoryForm
     Top = 0
     Width = 769
     Height = 405
-    ActivePage = TabSheet6
+    ActivePage = TabSheet8
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
